@@ -39,4 +39,12 @@ function addToPlayer(element) {
 
   function disable(button) {
 		button.disabled = true;
+}
+  
+
+  function getElementById(elementId) {
+		const element = document.getElementById(elementId);
+		const elementValueString = element.innerText;
+		const value = parseFloat(elementValueString);
+		return value;
   }
