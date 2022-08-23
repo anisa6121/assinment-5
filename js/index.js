@@ -47,4 +47,36 @@ function addToPlayer(element) {
 		const elementValueString = element.innerText;
 		const value = parseFloat(elementValueString);
 		return value;
-  }
+}
+  
+
+  document
+		.getElementById("player-expense-btn")
+		.addEventListener("click", function () {
+			const playerExpense =
+				document.getElementById("expense-amount");
+
+			const perPlayerCost = getElementById("per-player-cost");
+
+			const totalExpense = perPlayerCost * playerArray.length;
+
+			playerExpense.innerText = totalExpense;
+		});
+
+  document
+		.getElementById("total-cost-amount-btn")
+		.addEventListener("click", function () {
+			const totalAmountCost =
+				document.getElementById("total-cost");
+
+			const playerExpense = getElementById("expense-amount");
+
+			const ManagerExpense = getElementById("manager-cost");
+
+			const newCoachExpense = getElementById("coach-cost");
+
+			const totalPlayerExpense =
+				playerExpense + ManagerExpense + newCoachExpense;
+
+			totalAmountCost.innerText = totalPlayerExpense;
+		});
