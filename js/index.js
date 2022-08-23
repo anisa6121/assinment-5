@@ -36,3 +36,7 @@ function addToPlayer(element) {
 
 	displayName(playerArray);
 }
+
+  function disable(button) {
+		button.disabled = true;
+  }
