@@ -7,8 +7,8 @@ const playerList = document.getElementById("selected-player");
 	for (let i = 0; i < playerName.length; i++) {
 		const playerName = playerArray[i].playerNames;
 		if (playerArray.length > 5) {
-			break;
-		}
+		break;
+	}
 		
 
 	const namelist = document.createElement("li");
@@ -40,35 +40,41 @@ function disable(button) {
 	button.disabled = true;
 }
 
-function getElementById(elementId) {
-	const element = document.getElementById(elementId);
-	const elementValueString = element.innerText;
+function getInputId(inputId) {
+	const element = document.getElementById(inputId);
+	const elementValueString = element.value;
 	const value = parseFloat(elementValueString);
 	return value;
 }
 
 document.getElementById("player-expense-btn").addEventListener("click", function () {
-	const playerExpense = document.getElementById("expense-amount");
 
-	const perPlayerCost = getElementById("per-player-cost");
+  const playerExpense = document.getElementById("expense-amount"); 
 
-	const totalExpense = perPlayerCost * playerArray.length;
+    const perPlayerCost = getInputId("per-player-amount-input");
+    
+    const totalExpense = perPlayerCost * playerArray.length;
+    
+ playerExpense.innerText = totalExpense;
 
-	playerExpense.innerText = totalExpense;
 	});
 
 document.getElementById("total-cost-amount-btn").addEventListener("click", function () {
     
-      const totalAmountCost = document.getElementById("total-cost");
+    const totalAmountCost = document.getElementById("total-cost");
 
-		const playerExpense = getElementById("expense-amount");
+    const playerCost = document.getElementById("expense-amount");
+    const previouCostsString = playerCost.innerText;
+    const newCostValue = parseFloat(previouCostsString);
+    
 
-		const ManagerExpense = getElementById("manager-cost");
 
-		const newCoachExpense = getElementById("coach-cost");
+    const ManagerExpense = getInputId(" manager-cost");
 
-		const totalPlayerExpense =
-			playerExpense + ManagerExpense + newCoachExpense;
+   const coachExpense = getInputId(" coach-cost");
+	
 
-		totalAmountCost.innerText = totalPlayerExpense;
+	const totalPlayerExpense = newCostValue + ManagerExpense + coachExpense;
+
+	totalAmountCost.innerText = totalPlayerExpense;
 	});
