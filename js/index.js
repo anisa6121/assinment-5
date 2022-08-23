@@ -41,9 +41,11 @@ function disable(button) {
 }
 
 function getInputId(inputId) {
-	const element = document.getElementById(inputId);
-	const elementValueString = element.value;
-	const value = parseFloat(elementValueString);
+	const inputField = document.getElementById(inputId);
+    const inputFiledValueString = inputField.value;
+    
+    const value = parseFloat(inputFiledValueString);
+    // inputField.value = '';
 	return value;
 }
 
@@ -64,8 +66,8 @@ document.getElementById("total-cost-amount-btn").addEventListener("click", funct
     const totalAmountCost = document.getElementById("total-cost");
 
     const playerCost = document.getElementById("expense-amount");
-    const previouCostsString = playerCost.innerText;
-    const newCostValue = parseFloat(previouCostsString);
+    const preveousCostString = playerCost.innerText;
+    const newCostValue = parseFloat(preveousCostString);
     
 
 
