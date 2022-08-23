@@ -1,7 +1,7 @@
 const playerArray = [];
 
 function displayName(playerName) {
-	const playerList = document.getElementById("selected-player");
+const playerList = document.getElementById("selected-player");
 
 	playerList.innerHTML = "";
 	for (let i = 0; i < playerName.length; i++) {
@@ -9,7 +9,7 @@ function displayName(playerName) {
 		if (playerArray.length > 5) {
 			break;
 		}
-		console.log(playerName);
+		
 
 	const namelist = document.createElement("li");
 	namelist.className = "list-group-item list-group-item-dark";
@@ -22,14 +22,14 @@ function displayName(playerName) {
 }
 
 function addToPlayer(element) {
-	// console.log(element.parentNode.children[0].innerText);
+
 
 	const playerName = element.parentNode.children[0].innerText;
 	// console.log(playerName)
 	const playerObj = {
 		playerNames: playerName,
 	};
-	// console.log(playerObj);
+
 
 	playerArray.push(playerObj);
 
